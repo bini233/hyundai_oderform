@@ -6,6 +6,35 @@
 <title>Parnas Hotel Collection Special Offer</title>
 
 <style>
+  /* ✅ 계좌이체 안내 강조 박스 */
+  .bank-highlight{
+    margin-top: 12px;
+    padding: 14px 16px;
+    background: #f7f9fb;
+    border: 1px solid #cfd6dd;
+    border-radius: 10px;
+    color: #2c3e50;
+    line-height: 1.6;
+  }
+  
+  .bank-highlight .bank-name{
+    font-weight: 700;
+  }
+  
+  .bank-highlight .bank-amount{
+    margin-top: 6px;
+    font-weight: 700;
+    font-size: 1.05em;
+  }
+  
+  .bank-highlight .bank-note{
+    margin-top: 6px;
+    font-size: 0.92em;
+    color: #556677;
+  }
+
+
+  
   body {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
@@ -366,12 +395,21 @@
     </select>
 
     <div id="bankArea" class="hidden">
+    
+      <!-- ✅ 계좌이체 안내 강조 박스 -->
+      <div class="bank-highlight" id="bankHighlight">
+        <div class="bank-name">하나은행 183-910001-24105</div>
+        <div class="bank-amount">입금해야되는 총액: <span id="bankTotalText">0</span>원</div>
+        <div class="bank-note">결제 확인 후 출고 진행됩니다.</div>
+      </div>
+    
       <label>입금자명</label>
       <input type="text" name="입금자명" placeholder="예시: 홍길동">
-
+    
       <label>입금 금액</label>
       <input type="text" id="depositAmount" name="입금 금액" inputmode="numeric" placeholder="총금액과 동일하게 입력">
     </div>
+
 
     <div id="cardArea" class="hidden">
       <label>결제 링크 받을 번호</label>
@@ -613,7 +651,12 @@ function calcTotal(){
     total += p.price * q;
   });
   document.getElementById("grandTotal").innerText = total.toLocaleString();
+
+    // ✅ 계좌이체 안내 박스 총액도 업데이트
+  const bankTotalEl = document.getElementById("bankTotalText");
+  if (bankTotalEl) bankTotalEl.innerText = total.toLocaleString();
 }
+
 
 /* 양방향 싱크 */
 document.addEventListener("input", e => {
