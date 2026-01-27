@@ -7,6 +7,23 @@
 
 <style>
   /* ✅ 계좌이체 안내 강조 박스 */
+  /* ✅ 카드결제 안내 박스(은행 박스와 동일 톤) */
+  .pay-highlight{
+    margin-top: 12px;
+    padding: 14px 16px;
+    background: #f7f9fb;
+    border: 1px solid #cfd6dd;
+    border-radius: 10px;
+    color: #2c3e50;
+    line-height: 1.6;
+  }
+  
+  .pay-highlight .pay-note{
+    margin-top: 6px;
+    font-size: 0.92em;
+    color: #556677;
+  }
+    
   .bank-highlight{
     margin-top: 12px;
     padding: 14px 16px;
@@ -412,9 +429,17 @@
 
 
     <div id="cardArea" class="hidden">
+    
+      <!-- 카드결제 안내 강조 박스 -->
+      <div class="pay-highlight" id="cardHighlight">
+        카드 결제하실 수 있는 결제 링크를 입력해주신 전화번호로 보내드릴 예정입니다.
+        <div class="pay-note">결제 확인 후, 영업일 기준으로 순차 출고됩니다.</div>
+      </div>
+    
       <label>결제 링크 받을 번호</label>
       <input type="text" name="카드결제 연락처" class="phone-input" placeholder="숫자만 입력">
     </div>
+
 
     <!-- 5. 증빙 -->
     <h2>5. 현금영수증 / 세금계산서</h2>
