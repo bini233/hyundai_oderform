@@ -288,6 +288,74 @@
     border: 1px solid #ddd;
   }
 
+  /* ✅ 개인정보 동의 박스 */
+  .consent-box{
+    margin-top: 28px;
+    padding: 16px 16px;
+    background: #f7f9fb;
+    border: 1px solid #cfd6dd;
+    border-radius: 10px;
+    color: #2c3e50;
+    line-height: 1.65;
+  }
+  
+  .consent-title{
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .consent-section{
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid #e4e9ef;
+  }
+  
+  .consent-section:first-child{
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .consent-subtitle{
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  
+  .consent-list{
+    margin: 0;
+    padding-left: 18px;
+    color: #556677;
+    font-size: 0.95em;
+  }
+  
+  .consent-check{
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+  
+  .consent-check input[type="checkbox"]{
+    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    accent-color: #2c3e50;
+  }
+  
+  .consent-check label{
+    margin: 0;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .consent-required{
+    font-size: 0.9em;
+    color: #556677;
+    margin-top: 6px;
+  }
+
+
   button[type="submit"] {
     width: 100%;
     padding: 16px;
@@ -466,6 +534,43 @@
     <!-- Formspree hidden -->
     <input type="hidden" name="주문 내역" id="orderSummaryInput">
     <input type="hidden" name="총액" id="totalAmountInput">
+    
+    <!-- ✅ 개인정보 동의 -->
+    <div class="consent-box">
+      <div class="consent-title">개인정보 동의</div>
+    
+      <div class="consent-section">
+        <div class="consent-subtitle">1) 개인정보 수집 및 이용 동의</div>
+        <ul class="consent-list">
+          <li>수집하는 개인정보 항목: 주문자 이름, 수취인 이름, 수취인 연락처, 수취인 주소</li>
+          <li>수집 및 이용 목적: 파르나스호텔 컬렉션 상품 주문 취합 및 배송</li>
+          <li>보유 및 이용기간: 배송 완료 후 1개월간 보관 후 폐기</li>
+        </ul>
+    
+        <div class="consent-check">
+          <input type="checkbox" id="agreeCollect" required>
+          <label for="agreeCollect">개인정보 수집 및 이용에 동의합니다. (필수)</label>
+        </div>
+      </div>
+    
+      <div class="consent-section">
+        <div class="consent-subtitle">2) 개인정보 제3자 제공 동의</div>
+        <ul class="consent-list">
+          <li>제공받는 자: 물플</li>
+          <li>제공받는 자의 이용 목적: 파르나스호텔 컬렉션 상품 배송</li>
+          <li>제공하는 항목: 수취인 이름, 수취인 연락처, 수취인 주소</li>
+          <li>제공받는 자의 보유 및 이용기간: 배송 완료 후 1개월간 보관 후 폐기</li>
+        </ul>
+    
+        <div class="consent-check">
+          <input type="checkbox" id="agreeThirdParty" required>
+          <label for="agreeThirdParty">개인정보 제3자 제공에 동의합니다. (필수)</label>
+        </div>
+      </div>
+    
+      <div class="consent-required">※ 필수 동의 항목에 체크해야 주문서 제출이 가능합니다.</div>
+    </div>
+
 
     <button type="submit">주문서 제출하기</button>
   </form>
@@ -722,6 +827,16 @@ function validateForm(){
     return false;
   }
 
+  // ✅ 개인정보 동의 필수 체크
+  const agreeCollect = document.getElementById("agreeCollect").checked;
+  const agreeThirdParty = document.getElementById("agreeThirdParty").checked;
+
+  if (!agreeCollect || !agreeThirdParty) {
+    alert("개인정보 동의(수집·이용 / 제3자 제공)는 필수입니다. 체크 후 제출해주세요.");
+    return false;
+  }
+
+
   const pay = document.getElementById("paySelect").value;
 
   if (pay === "계좌이체"){
@@ -752,6 +867,10 @@ function validateForm(){
       return false;
     }
   }
+
+
+
+  
 
   /* 주문 요약 텍스트 생성 */
   let lines = [];
