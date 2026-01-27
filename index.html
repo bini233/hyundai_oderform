@@ -370,7 +370,7 @@
       <input type="text" name="입금자명" placeholder="예시: 홍길동">
 
       <label>입금 금액</label>
-      <input type="number" id="depositAmount" name="입금 금액" min="0" placeholder="총금액과 동일하게 입력">
+      <input type="text" id="depositAmount" name="입금 금액" inputmode="numeric" placeholder="총금액과 동일하게 입력">
     </div>
 
     <div id="cardArea" class="hidden">
@@ -551,6 +551,25 @@ mobileSelect.addEventListener("change", e => {
 
 /* ----- 상세 업데이트 ----- */
 /* ----- 수량 입력 UX 개선: 포커스 시 전체 선택 ----- */
+/* ----- 금액 입력: 천단위 콤마 표시 ----- */
+function formatWithComma(value){
+  const onlyNumber = (value || "").toString().replace(/[^\d]/g, "");
+  if (!onlyNumber) return "";
+  return parseInt(onlyNumber, 10).toLocaleString();
+}
+
+const depositInput = document.getElementById("depositAmount");
+if (depositInput){
+  depositInput.addEventListener("input", () => {
+    const cursorFromEnd = depositInput.value.length - depositInput.selectionStart;
+    depositInput.value = formatWithComma(depositInput.value);
+    // 커서 위치 최대한 자연스럽게 유지
+    const newPos = Math.max(0, depositInput.value.length - cursorFromEnd);
+    depositInput.setSelectionRange(newPos, newPos);
+  });
+}
+
+  
 function attachQtySelectAll(){
   // 왼쪽 리스트 수량 input들
   document.querySelectorAll(".qty-input").forEach(input => {
@@ -639,7 +658,14 @@ function validateForm(){
 
   if (pay === "계좌이체"){
     const depositor = document.querySelector('input[name="입금자명"]').value.trim();
-    const depositAmount = parseInt(document.getElementById("depositAmount").value);
+    const depositAmount = parseInt(
+      document.getElementById("depositAmount").value.replace(/[^\d]/g,""),
+      10
+    );
+    if (!depositAmount || depositAmount !== total){
+      alert("입금 금액이 총액과 일치해야 합니다.");
+      return false;
+    }
 
     if (!depositor){
       alert("입금자명을 입력해주세요.");
