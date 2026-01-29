@@ -6,6 +6,16 @@
 <title>Parnas Hotel Collection Special Offer</title>
 
 <style>
+  /* 제품 디테일 상세페이지 영역 CSS 추가 */
+  .desc-title{ font-weight:700; color:#2c3e50; margin-bottom:6px; }
+  .desc-sub{ color:#556677; margin-bottom:12px; }
+  .desc-section{ font-weight:700; color:#2c3e50; margin:12px 0 6px; }
+  .desc-list{ margin:0; padding-left:18px; color:#556677; line-height:1.7; }
+  .desc-footnote{ margin-top:10px; font-size:0.92em; color:#778899; }
+  .detail-desc{
+    white-space: pre-line;
+  }
+
   /* ✅ 상단 안내(판매기간/구매방법/배송/오프라인/문의) 강조 박스 */
   .info-box{
     text-align: center;
@@ -628,39 +638,52 @@
 <script>
 /* ----- 상품 데이터 ----- */
 const products = [
-  { category:"Scent Line", name:"Mossy Wood 디퓨저", price:66500,
+  { category:"Scent Line", name:"Mossy Wood 디퓨저", price:80750,
     img: "./assets/Mossy_Wood_Diffuser.png",
-    desc:"짙은 이끼와 우디한 향의 시그니처 디퓨저입니다." },
+    desc: `
+    <div class="desc-title">향기로 전하는 품격, Mossy Wood</div>
+    <div class="desc-sub">은은하게 퍼지는 풍부한 아이리스 향과 세련된 우디 노트</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>디퓨저 본품 200ml</li>
+      <li>리필 용액 100ml</li>
+      <li>리드 스틱 8개</li>
+    </ul>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
 
-  { category:"Scent Line", name:"Mossy Wood 캔들", price:65100,
+      
+  { category:"Scent Line", name:"Mossy Wood 캔들", price:79050,
     img: "./assets/Mossy_Wood_Candle.png",
     desc:"불을 밝히면 은은한 모스향이 공간을 채웁니다." },
 
-  { category:"Scent Line", name:"Mossy Wood 룸스프레이", price:61600,
+  { category:"Scent Line", name:"Mossy Wood 룸스프레이", price:74800,
     img: "./assets/Mossy_Wood_Roomspray.png",
     desc:"뿌리기만 하면 호텔처럼 정돈된 향을 느낄 수 있습니다." },
 
-  { category:"Scent Line", name:"Mint Forest 디퓨저", price:66500,
+  { category:"Scent Line", name:"Mint Forest 디퓨저", price:80750,
     img: "./assets/Mint_Forest_Diffuser.png",
     desc:"상쾌한 민트와 숲 향의 조화." },
 
-  { category:"Scent Line", name:"Mint Forest 캔들", price:65100,
+  { category:"Scent Line", name:"Mint Forest 캔들", price:79050,
     img: "./assets/Mint_Forest_Candle.png",
     desc:"초록빛 숲 향이 은은하게 퍼지는 캔들." },
 
-  { category:"Scent Line", name:"Mint Forest 룸스프레이", price:61600,
+  { category:"Scent Line", name:"Mint Forest 룸스프레이", price:74800,
     img: "./assets/Mint_Forest_Roomspray.png",
     desc:"빠르게 분위기를 바꾸는 산뜻한 룸스프레이." },
 
-  { category:"Scent Line", name:"White Bloom 디퓨저", price:66500,
+  { category:"Scent Line", name:"White Bloom 디퓨저", price:80750,
     img: "./assets/White_Bloom_Diffuser.png",
     desc:"화이트 플로럴 향이 은은하게 머무는 디퓨저." },
 
-  { category:"Scent Line", name:"White Bloom 캔들", price:65100,
+  { category:"Scent Line", name:"White Bloom 캔들", price:79050,
     img: "./assets/White_Bloom_Candle.png",
     desc:"잔잔한 꽃향이 오래 지속되는 캔들." },
 
-  { category:"Scent Line", name:"White Bloom 룸스프레이", price:61600,
+  { category:"Scent Line", name:"White Bloom 룸스프레이", price:74800,
     img: "./assets/White_Bloom_Roomspray.png",
     desc:"부드러운 플로럴향 룸스프레이." },
 
@@ -804,7 +827,7 @@ function selectProduct(i) {
 
   document.getElementById("detailTitle").innerText = p.name;
   document.getElementById("detailImg").src = p.img;
-  document.getElementById("detailDesc").innerText = p.desc;
+  document.getElementById("detailDesc").innerHTML = p.desc;
   document.getElementById("detailPrice").innerText = p.price.toLocaleString();
 
   const q = document.querySelector(`.qty-input[data-index="${i}"]`).value || 0;
