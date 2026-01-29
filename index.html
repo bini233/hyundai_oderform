@@ -10,6 +10,7 @@
   .desc-title{ font-weight:700; color:#2c3e50; margin-bottom:6px; }
   .desc-sub{ color:#556677; margin-bottom:12px; }
   .desc-section{ font-weight:700; color:#2c3e50; margin:12px 0 6px; }
+  .desc-how{ font-weight:700; color:#2c3e50; margin:12px 0 6px; }
   .desc-list{ margin:0; padding-left:18px; color:#556677; line-height:1.7; }
   .desc-footnote{ margin-top:10px; font-size:0.92em; color:#778899; }
 
@@ -654,7 +655,24 @@ const products = [
       
   { category:"Scent Line", name:"Mossy Wood 캔들", price:79050,
     img: "./assets/Mossy_Wood_Candle.png",
-    desc:"불을 밝히면 은은한 모스향이 공간을 채웁니다." },
+    desc: `
+    <div class="desc-title">향기로 전하는 품격, Mossy Wood</div>
+    <div class="desc-sub">은은하게 퍼지는 풍부한 아이리스 향과 세련된 우디 노트로 럭셔리한 품격을 전합니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>캔들 본품 220g</li>
+    </ul>
+
+    <div class="desc-how">사용 방법</div>
+    <ul class="desc-list">
+      <li>1. 최초 사용 시, 심지를 곧게 세운 후 불을 붙여 주세요.</li>
+      <li>2. 캔들의 윗면이 골고루 녹을 때까지 약 2~3시간 정도 캔들을 태워 주세요.</li>
+      <li>3. 사용 후에는 불꽃을 완전히 꺼 주시기 바랍니다.</li>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
+  },
 
   { category:"Scent Line", name:"Mossy Wood 룸스프레이", price:74800,
     img: "./assets/Mossy_Wood_Roomspray.png",
@@ -689,7 +707,7 @@ const products = [
     img: "./assets/White_Bloom_Diffuser.png",
     desc: `
     <div class="desc-title">고요함 속에서 피어나는 깊은 평온, White Bloom</div>
-    <div class="desc-sub">상쾌한 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
+    <div class="desc-sub">상쾌한 아침 햇살같은 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
