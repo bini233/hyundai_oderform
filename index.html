@@ -10,7 +10,6 @@
   .desc-title{ font-weight:700; color:#2c3e50; margin-bottom:6px; }
   .desc-sub{ color:#556677; margin-bottom:12px; }
   .desc-section{ font-weight:700; color:#2c3e50; margin:12px 0 6px; }
-  .desc-how{ font-weight:700; color:#2c3e50; margin:12px 0 6px; }
   .desc-list{ margin:0; padding-left:18px; color:#556677; line-height:1.7; }
   .desc-footnote{ margin-top:10px; font-size:0.92em; color:#778899; }
 
@@ -663,12 +662,6 @@ const products = [
     <ul class="desc-list">
       <li>캔들 본품 220g</li>
     </ul>
-
-    <div class="desc-how">사용 방법</div>
-    <ul class="desc-list">
-      <li>1. 최초 사용 시, 심지를 곧게 세운 후 불을 붙여 주세요.</li>
-      <li>2. 캔들의 윗면이 골고루 녹을 때까지 약 2~3시간 정도 캔들을 태워 주세요.</li>
-      <li>3. 사용 후에는 불꽃을 완전히 꺼 주시기 바랍니다.</li>
     
     <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
     `
@@ -676,7 +669,18 @@ const products = [
 
   { category:"Scent Line", name:"Mossy Wood 룸스프레이", price:74800,
     img: "./assets/Mossy_Wood_Roomspray.png",
-    desc:"뿌리기만 하면 호텔처럼 정돈된 향을 느낄 수 있습니다." },
+    desc: `
+    <div class="desc-title">향기로 전하는 품격, Mossy Wood</div>
+    <div class="desc-sub">은은하게 퍼지는 풍부한 아이리스 향과 세련된 우디 노트로 럭셔리한 품격을 전합니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>룸스프레이 본품 100ml</li>
+    </ul>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
+  },
 
   { category:"Scent Line", name:"Mint Forest 디퓨저", price:80750,
     img: "./assets/Mint_Forest_Diffuser.png",
@@ -697,11 +701,33 @@ const products = [
 
   { category:"Scent Line", name:"Mint Forest 캔들", price:79050,
     img: "./assets/Mint_Forest_Candle.png",
-    desc:"초록빛 숲 향이 은은하게 퍼지는 캔들." },
+    desc: `
+    <div class="desc-title">공간을 감싸는 고요한 싱그러움, Mint Forest</div>
+    <div class="desc-sub">제주의 맑고 부드러운 바람, 푸른 바다의 감동을 향기로 전합니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>캔들 본품 220g</li>
+    </ul>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
+  },
 
   { category:"Scent Line", name:"Mint Forest 룸스프레이", price:74800,
     img: "./assets/Mint_Forest_Roomspray.png",
-    desc:"빠르게 분위기를 바꾸는 산뜻한 룸스프레이." },
+    desc: `
+    <div class="desc-title">공간을 감싸는 고요한 싱그러움, Mint Forest</div>
+    <div class="desc-sub">제주의 맑고 부드러운 바람, 푸른 바다의 감동을 향기로 전합니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>룸스프레이 본품 100ml</li>
+    </ul>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
+  },
 
   { category:"Scent Line", name:"White Bloom 디퓨저", price:80750,
     img: "./assets/White_Bloom_Diffuser.png",
@@ -722,11 +748,33 @@ const products = [
 
   { category:"Scent Line", name:"White Bloom 캔들", price:79050,
     img: "./assets/White_Bloom_Candle.png",
-    desc:"잔잔한 꽃향이 오래 지속되는 캔들." },
+    desc: `
+    <div class="desc-title">고요함 속에서 피어나는 깊은 평온, White Bloom</div>
+    <div class="desc-sub">상쾌한 아침 햇살같은 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>룸스프레이 본품 100ml</li>
+    </ul>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
+  },
 
   { category:"Scent Line", name:"White Bloom 룸스프레이", price:74800,
     img: "./assets/White_Bloom_Roomspray.png",
-    desc:"부드러운 플로럴향 룸스프레이." },
+    desc: `
+    <div class="desc-title">고요함 속에서 피어나는 깊은 평온, White Bloom</div>
+    <div class="desc-sub">상쾌한 아침 햇살같은 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>캔들 본품 220g</li>
+    </ul>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
+  },
 
   { category:"Bedding Line", name:"구스다운 킹 이불세트", price:1050000,
     img: "./assets/Duvet_K.png",
