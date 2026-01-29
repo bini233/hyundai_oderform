@@ -6,6 +6,44 @@
 <title>Parnas Hotel Collection Special Offer</title>
 
 <style>
+  /*수량 조정*/  
+  /* ✅ 수량 스텝퍼(+-) */
+  .qty-stepper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .qty-stepper #detailQty{
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    text-align: center;
+  }
+  
+  .qty-btn{
+    width: 42px;
+    height: 42px;
+    border: 1px solid #cfd6dd;
+    border-radius: 10px;
+    background: #fff;
+    color: #2c3e50;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .qty-btn:hover{
+    border-color: #2c3e50;
+  }
+  
+  .qty-btn:active{
+    transform: translateY(1px);
+  }
+
+  
   /* 제품 디테일 상세페이지 영역 CSS 추가 */
   .desc-title{ font-weight:700; color:#2c3e50; margin-bottom:6px; }
   .desc-sub{ color:#556677; margin-bottom:12px; }
@@ -503,8 +541,14 @@
         <div>단가: <span id="detailPrice">0</span>원</div>
         <div>현재 상품 금액: <span id="detailSubtotal">0</span>원</div>
 
-        <label>수량 조정</label>
-        <input type="number" id="detailQty" min="0" value="0">
+        <label>수량 선택</label>
+        
+        <div class="qty-stepper">
+          <button type="button" class="qty-btn" id="qtyMinus" aria-label="수량 감소">−</button>
+          <input type="number" id="detailQty" min="0" value="0" inputmode="numeric">
+          <button type="button" class="qty-btn" id="qtyPlus" aria-label="수량 증가">+</button>
+        </div>
+
       </div>
     </div>
 
@@ -1054,6 +1098,26 @@ function attachQtySelectAll(){
 }
 
 attachQtySelectAll();
+/* ✅ 상세 수량 +/- 버튼 */
+const btnMinus = document.getElementById("qtyMinus");
+const btnPlus = document.getElementById("qtyPlus");
+const detailQtyEl = document.getElementById("detailQty");
+
+function setQtyByDelta(delta){
+  const current = parseInt(detailQtyEl.value, 10) || 0;
+  const next = Math.max(0, current + delta);
+  detailQtyEl.value = next;
+
+  // input 이벤트를 인위적으로 발생시켜서
+  // 기존 양방향 싱크 로직(document.addEventListener("input"...))을 그대로 태움
+  detailQtyEl.dispatchEvent(new Event("input", { bubbles: true }));
+}
+
+
+if (btnMinus) btnMinus.addEventListener("click", () => setQtyByDelta(-1));
+if (btnPlus) btnPlus.addEventListener("click", () => setQtyByDelta(+1));
+
+  
   
 function selectProduct(i) {
   selectedIndex = i;
