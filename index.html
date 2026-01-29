@@ -682,7 +682,7 @@
       <div class="consent-section">
         <div class="consent-subtitle">1) 개인정보 수집 및 이용 동의</div>
         <ul class="consent-list">
-          <li>수집하는 개인정보 항목: 주문자 이름, 수취인 이름, 수취인 연락처, 수취인 주소</li>
+          <li>수집하는 개인정보 항목: 주문자 이름, 주문자 이메일, 수취인 이름, 수취인 연락처, 수취인 주소</li>
           <li>수집 및 이용 목적: 파르나스호텔 컬렉션 상품 주문 취합 및 배송</li>
           <li>보유 및 이용기간: 배송 완료 후 1개월간 보관 후 폐기</li>
         </ul>
@@ -719,10 +719,11 @@
 <script>
 /* ----- 상품 데이터 ----- */
 const products = [
-  { category:"Scent Line", name:"Mossy Wood 디퓨저", price:80750,
+  { category:"Scent Line", name:"Mossy Wood 디퓨저", price:76000,
     img: "./assets/Mossy_Wood_Diffuser.png",
     desc: `
     <div class="desc-title">향기로 전하는 품격, Mossy Wood</div>
+    <div class="desc-sub">그랜드 인터컨티넨탈 서울 파르나스에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">은은하게 퍼지는 풍부한 아이리스 향과 세련된 우디 노트로 럭셔리한 품격을 전합니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -736,10 +737,11 @@ const products = [
     `
   },
       
-  { category:"Scent Line", name:"Mossy Wood 캔들", price:79050,
+  { category:"Scent Line", name:"Mossy Wood 캔들", price:74400,
     img: "./assets/Mossy_Wood_Candle.png",
     desc: `
     <div class="desc-title">향기로 전하는 품격, Mossy Wood</div>
+    <div class="desc-sub">그랜드 인터컨티넨탈 서울 파르나스에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">은은하게 퍼지는 풍부한 아이리스 향과 세련된 우디 노트로 럭셔리한 품격을 전합니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -751,25 +753,27 @@ const products = [
     `
   },
 
-  { category:"Scent Line", name:"Mossy Wood 룸스프레이", price:74800,
+  { category:"Scent Line", name:"Mossy Wood 룸 스프레이", price:70400,
     img: "./assets/Mossy_Wood_Roomspray.png",
     desc: `
     <div class="desc-title">향기로 전하는 품격, Mossy Wood</div>
+    <div class="desc-sub">그랜드 인터컨티넨탈 서울 파르나스에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">은은하게 퍼지는 풍부한 아이리스 향과 세련된 우디 노트로 럭셔리한 품격을 전합니다.</div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
-      <li>룸스프레이 본품 100ml</li>
+      <li>룸 스프레이 본품 100ml</li>
     </ul>
     
     <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
     `
   },
 
-  { category:"Scent Line", name:"Mint Forest 디퓨저", price:80750,
+  { category:"Scent Line", name:"Mint Forest 디퓨저", price:76000,
     img: "./assets/Mint_Forest_Diffuser.png",
     desc: `
     <div class="desc-title">공간을 감싸는 고요한 싱그러움, Mint Forest</div>
+    <div class="desc-sub">파르나스 호텔 제주에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">제주의 맑고 부드러운 바람, 푸른 바다의 감동을 향기로 전합니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -783,10 +787,11 @@ const products = [
     `
   },
 
-  { category:"Scent Line", name:"Mint Forest 캔들", price:79050,
+  { category:"Scent Line", name:"Mint Forest 캔들", price:74400,
     img: "./assets/Mint_Forest_Candle.png",
     desc: `
     <div class="desc-title">공간을 감싸는 고요한 싱그러움, Mint Forest</div>
+    <div class="desc-sub">파르나스 호텔 제주에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">제주의 맑고 부드러운 바람, 푸른 바다의 감동을 향기로 전합니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -798,25 +803,27 @@ const products = [
     `
   },
 
-  { category:"Scent Line", name:"Mint Forest 룸스프레이", price:74800,
+  { category:"Scent Line", name:"Mint Forest 룸 스프레이", price:70400,
     img: "./assets/Mint_Forest_Roomspray.png",
     desc: `
     <div class="desc-title">공간을 감싸는 고요한 싱그러움, Mint Forest</div>
+    <div class="desc-sub">파르나스 호텔 제주에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">제주의 맑고 부드러운 바람, 푸른 바다의 감동을 향기로 전합니다.</div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
-      <li>룸스프레이 본품 100ml</li>
+      <li>룸 스프레이 본품 100ml</li>
     </ul>
     
     <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
     `
   },
 
-  { category:"Scent Line", name:"White Bloom 디퓨저", price:80750,
+  { category:"Scent Line", name:"White Bloom 디퓨저", price:76000,
     img: "./assets/White_Bloom_Diffuser.png",
     desc: `
     <div class="desc-title">고요함 속에서 피어나는 깊은 평온, White Bloom</div>
+    <div class="desc-sub">웨스틴 서울 파르나스에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">상쾌한 아침 햇살같은 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -830,25 +837,11 @@ const products = [
     `
   },
 
-  { category:"Scent Line", name:"White Bloom 캔들", price:79050,
+  { category:"Scent Line", name:"White Bloom 캔들", price:74400,
     img: "./assets/White_Bloom_Candle.png",
     desc: `
     <div class="desc-title">고요함 속에서 피어나는 깊은 평온, White Bloom</div>
-    <div class="desc-sub">상쾌한 아침 햇살같은 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
-    
-    <div class="desc-section">상품 구성</div>
-    <ul class="desc-list">
-      <li>룸스프레이 본품 100ml</li>
-    </ul>
-    
-    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
-    `
-  },
-
-  { category:"Scent Line", name:"White Bloom 룸스프레이", price:74800,
-    img: "./assets/White_Bloom_Roomspray.png",
-    desc: `
-    <div class="desc-title">고요함 속에서 피어나는 깊은 평온, White Bloom</div>
+    <div class="desc-sub">웨스틴 서울 파르나스에서 사용하는 시그니처 향으로,</div>
     <div class="desc-sub">상쾌한 아침 햇살같은 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -860,11 +853,27 @@ const products = [
     `
   },
 
-  { category:"Bedding Line", name:"킹사이즈 구스다운 이불 세트", price:1487500,
+  { category:"Scent Line", name:"White Bloom 룸 스프레이", price:70400,
+    img: "./assets/White_Bloom_Roomspray.png",
+    desc: `
+    <div class="desc-title">고요함 속에서 피어나는 깊은 평온, White Bloom</div>
+    <div class="desc-sub">웨스틴 서울 파르나스에서 사용하는 시그니처 향으로,</div>
+    <div class="desc-sub">상쾌한 아침 햇살같은 이탈리안 베르가모트와 포근한 담요처럼 감싸오는 머스크와 앰버의 잔향으로, 잔잔한 활력이 공간을 채웁니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>룸 스프레이 본품 100ml</li>
+    </ul>
+    
+    <div class="desc-footnote">* 패키지 상자와 선물 포장용 쇼핑백이 함께 제공됩니다.</div>
+    `
+  },
+
+  { category:"Lifestyle Line", name:"킹사이즈 구스다운 이불 세트", price:1487500,
     img: "./assets/Duvet_K.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
@@ -878,11 +887,11 @@ const products = [
     `
   },
 
-  { category:"Bedding Line", name:"퀸사이즈 구스다운 이불 세트", price:1428000,
+  { category:"Lifestyle Line", name:"퀸사이즈 구스다운 이불 세트", price:1428000,
     img: "./assets/Duvet_Q.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
@@ -896,11 +905,11 @@ const products = [
     `
   },
 
-  { category:"Bedding Line", name:"싱글사이즈 구스다운 이불 세트", price:1190000,
+  { category:"Lifestyle Line", name:"싱글사이즈 구스다운 이불 세트", price:1190000,
     img: "./assets/Duvet_S.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
@@ -914,62 +923,11 @@ const products = [
     `
   },
 
-  { category:"Bedding Line", name:"킹사이즈 베드 시트", price:229500,
-    img: "./assets/Bed_Sheet_K.png",
-    desc: `
-    <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 4면 고무 밴드를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
-    
-    <div class="desc-section">상품 구성</div>
-    <ul class="desc-list">
-      <li>킹사이즈 베드 시트 1개(고무줄 타입): 170x200cm</li>
-      <li>패브릭 패키지 1개</li>
-    </ul>
-    
-    <div class="desc-footnote">* 매트리스 높이 최대 38cm까지 사용 가능합니다.</div>
-    <div class="desc-footnote">* 호텔 자수가 새겨진 보관용 패브릭 패키지에 담겨 제공됩니다.</div>
-    `
-  },
-
-  { category:"Bedding Line", name:"퀸사이즈 베드 시트", price:212500,
-    img: "./assets/Bed_Sheet_Q.png",
-    desc: `
-    <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 4면 고무 밴드를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
-    
-    <div class="desc-section">상품 구성</div>
-    <ul class="desc-list">
-      <li>퀸사이즈 베드 시트 1개(고무줄 타입): 150x200cm</li>
-      <li>패브릭 패키지 1개</li>
-    </ul>
-    
-    <div class="desc-footnote">* 매트리스 높이 최대 38cm까지 사용 가능합니다.</div>
-    <div class="desc-footnote">* 호텔 자수가 새겨진 보관용 패브릭 패키지에 담겨 제공됩니다.</div>
-    `
-  },
-
-  { category:"Bedding Line", name:"싱글사이즈 베드 시트", price:178500,
-    img: "./assets/Bed_Sheet_S.png",
-    desc: `
-    <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 4면 고무 밴드를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
-    
-    <div class="desc-section">상품 구성</div>
-    <ul class="desc-list">
-      <li>싱글사이즈 베드 시트 1개(고무줄 타입): 110x200cm</li>
-      <li>패브릭 패키지 1개</li>
-    </ul>
-    
-    <div class="desc-footnote">* 매트리스 높이 최대 38cm까지 사용 가능합니다.</div>
-    <div class="desc-footnote">* 호텔 자수가 새겨진 보관용 패브릭 패키지에 담겨 제공됩니다.</div>
-    `
-  },
-
-  { category:"Bedding Line", name:"프리미엄 구스다운 베개 세트", price:391000,
+  { category:"Lifestyle Line", name:"프리미엄 구스다운 베개 세트", price:391000,
     img: "./assets/Pillow_Premium.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다. </div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다. </div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
@@ -983,11 +941,11 @@ const products = [
     `
   },
 
-  { category:"Bedding Line", name:"킹사이즈 구스다운 베개 세트", price:335750,
+  { category:"Lifestyle Line", name:"킹사이즈 구스다운 베개 세트", price:335750,
     img: "./assets/Pillow_King.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
-    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 파르나스호텔의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다. </div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 그레이 파이핑 디테일과 히든 지퍼를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다. </div>
     
     <div class="desc-section">상품 구성</div>
     <ul class="desc-list">
@@ -1001,10 +959,64 @@ const products = [
     `
   },
 
-  { category:"Towel Line", name:"배스로브", price:157250,
+
+  { category:"Lifestyle Line", name:"킹사이즈 베드 시트", price:229500,
+    img: "./assets/Bed_Sheet_K.png",
+    desc: `
+    <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 4면 고무 밴드를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>킹사이즈 베드 시트 1개(고무줄 타입): 170x200cm</li>
+      <li>패브릭 패키지 1개</li>
+    </ul>
+    
+    <div class="desc-footnote">* 매트리스 높이 최대 38cm까지 사용 가능합니다.</div>
+    <div class="desc-footnote">* 호텔 자수가 새겨진 보관용 패브릭 패키지에 담겨 제공됩니다.</div>
+    `
+  },
+
+  { category:"Lifestyle Line", name:"퀸사이즈 베드 시트", price:212500,
+    img: "./assets/Bed_Sheet_Q.png",
+    desc: `
+    <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 4면 고무 밴드를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>퀸사이즈 베드 시트 1개(고무줄 타입): 150x200cm</li>
+      <li>패브릭 패키지 1개</li>
+    </ul>
+    
+    <div class="desc-footnote">* 매트리스 높이 최대 38cm까지 사용 가능합니다.</div>
+    <div class="desc-footnote">* 호텔 자수가 새겨진 보관용 패브릭 패키지에 담겨 제공됩니다.</div>
+    `
+  },
+
+  { category:"Lifestyle Line", name:"싱글사이즈 베드 시트", price:178500,
+    img: "./assets/Bed_Sheet_S.png",
+    desc: `
+    <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
+    <div class="desc-sub">머무는 순간의 편안함을 일상으로 옮겨왔습니다. 그랜드 인터컨티넨탈 서울 파르나스의 객실 기준을 준용하되, 4면 고무 밴드를 적용해 가정에서의 사용과 관리가 한층 더 편리하도록 리뉴얼했습니다.</div>
+    
+    <div class="desc-section">상품 구성</div>
+    <ul class="desc-list">
+      <li>싱글사이즈 베드 시트 1개(고무줄 타입): 110x200cm</li>
+      <li>패브릭 패키지 1개</li>
+    </ul>
+    
+    <div class="desc-footnote">* 매트리스 높이 최대 38cm까지 사용 가능합니다.</div>
+    <div class="desc-footnote">* 호텔 자수가 새겨진 보관용 패브릭 패키지에 담겨 제공됩니다.</div>
+    `
+  },
+
+
+  { category:"Lifestyle Line", name:"배스로브", price:157250,
     img: "./assets/Bathrobe.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
+    <div class="desc-sub">그랜드 인터컨티넨탈 서울 파르나스의 타월과 동일한 고급 사양으로 제작되었습니다.</div>
     <div class="desc-sub">세계 최고의 품질을 자랑하는 이집트 기자 원면과 무연사 20수 단사를 사용하여 부드러운 촉감과 포근함, 그리고 뛰어난 흡수력을 자랑합니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -1018,10 +1030,11 @@ const products = [
     `
   },
 
-  { category:"Towel Line", name:"배스 타월 2개입 세트", price:97750,
+  { category:"Lifestyle Line", name:"배스 타월 2개입 세트", price:97750,
     img: "./assets/Bathtowel.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
+    <div class="desc-sub">그랜드 인터컨티넨탈 서울 파르나스의 타월과 동일한 고급 사양으로 제작되었습니다.</div>
     <div class="desc-sub">세계 최고의 품질을 자랑하는 인도산 코마사 40수 연사를 사용하여 부드러운 감촉과 뛰어난 흡수력을 자랑하며, 뛰어난 내구성으로 오랜 기간 사용하실 수 있습니다.</div>
     
     <div class="desc-section">상품 구성</div>
@@ -1035,10 +1048,11 @@ const products = [
     `
   },
 
-  { category:"Towel Line", name:"페이스 타월 3개입 세트", price:67150,
+  { category:"Lifestyle Line", name:"페이스 타월 3개입 세트", price:67150,
     img: "./assets/FaceTowel.png",
     desc: `
     <div class="desc-title">일상을 빛내는 감도 높은 품격</div>
+    <div class="desc-sub">그랜드 인터컨티넨탈 서울 파르나스의 타월과 동일한 고급 사양으로 제작되었습니다.</div>
     <div class="desc-sub">세계 최고의 품질을 자랑하는 이집트 기자 원면과 무연사 20수 단사를 사용하여 부드러운 촉감과 포근함, 그리고 뛰어난 흡수력을 자랑합니다.</div>
     
     <div class="desc-section">상품 구성</div>
