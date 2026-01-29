@@ -6,6 +6,15 @@
 <title>Parnas Hotel Collection Special Offer</title>
 
 <style>
+  /* ✅ 필수 표시 별표 */
+  label.required::after{
+    content: " *";
+    color: #d33;          /* 빨간 별 */
+    font-weight: 700;
+    vertical-align: super; /* 첨자 */
+    font-size: 0.85em;
+  }
+  
   /*수량 조정*/  
   /* ✅ 수량 스텝퍼(+-) */
   .qty-stepper{
@@ -512,10 +521,10 @@
     <!-- 1. 주문자 -->
     <h2>1. 주문자 정보</h2>
 
-    <label>주문자 이름</label>
+    <label class="required">주문자 이름</label>
     <input type="text" name="주문자 이름" placeholder="예시: 홍길동" required>
 
-    <label>회사 이메일 주소</label>
+    <label class="required">회사 이메일 주소</label>
     <input type="text" name="회사 이메일 주소" placeholder="임직원 여부 확인용입니다. 예시: honggildong@company.com" required>
 
     <!-- 2. 상품 -->
@@ -559,19 +568,19 @@
     <!-- 3. 배송 -->
     <h2>3. 배송 정보</h2>
 
-    <label>수취인 이름</label>
+    <label class="required">수취인 이름</label>
     <input type="text" name="수취인 이름" placeholder="예시: 홍길동" required>
 
-    <label>수취인 전화번호</label>
+    <label class="required">수취인 전화번호</label>
     <input type="text" name="수취인 전화번호" class="phone-input" inputmode="numeric" placeholder="예시: 01012345678" required>
 
-    <label>수취인 주소</label>
+    <label class="required">수취인 주소</label>
     <input type="text" name="수취인 주소" placeholder="예시: 서울시 강남구" required>
 
     <!-- 4. 결제 -->
     <h2>4. 결제 방식</h2>
 
-    <label>결제 방식 선택</label>
+    <label class="required">결제 방식 선택</label>
     <select name="결제 방식" id="paySelect" required>
       <option value="">선택</option>
       <option value="계좌이체">계좌이체</option>
@@ -587,11 +596,11 @@
         <div class="bank-note">결제 확인 후, 영업일 기준으로 순차 출고됩니다.</div>
       </div>
     
-      <label>입금자명</label>
-      <input type="text" name="입금자명" placeholder="예시: 홍길동">
+      <label class="required">입금자명</label>
+      <input type="text" name="입금자명" placeholder="예시: 홍길동" required>
     
-      <label>입금 금액</label>
-      <input type="text" id="depositAmount" name="입금 금액" inputmode="numeric" placeholder="총금액과 동일하게 입력">
+      <label class="required">입금 금액</label>
+      <input type="text" id="depositAmount" name="입금 금액" inputmode="numeric" placeholder="총금액과 동일하게 입력" required>
     </div>
 
 
@@ -603,8 +612,8 @@
         <div class="pay-note">결제 확인 후, 영업일 기준으로 순차 출고됩니다.</div>
       </div>
     
-      <label>결제 링크 받을 번호</label>
-      <input type="text" name="카드결제 연락처" class="phone-input" placeholder="숫자만 입력">
+      <label class="required">결제 링크 받을 번호</label>
+      <input type="text" name="카드결제 연락처" class="phone-input" placeholder="숫자만 입력" required>
     </div>
 
 
